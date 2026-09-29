@@ -1,11 +1,11 @@
-// includes/vw_payments_for_kpi.js
+// includes/vw_pulse_payments_for_kpi.js
 module.exports = (companyId, projectId, rawDataset) =>
-  publish("vw_payments_for_kpi", {
+  publish("vw_pulse_payments_for_kpi", {
     type: "view",
     database: projectId,
     schema: "dashboards",
-    description: "View PAYMENTS FOR KPI",
-    tags: ["dashboards", "pulse", "vw_payments_for_kpi"]
+    description: "View PULSE PAYMENTS FOR KPI",
+    tags: ["dashboards", "pulse", "vw_pulse_payments_for_kpi"]
   })
     .query(`
   SELECT TRIM(bu.name)                                                                        AS \`BU\`
