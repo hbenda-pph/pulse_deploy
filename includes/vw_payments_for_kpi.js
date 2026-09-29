@@ -40,5 +40,6 @@ module.exports = (companyId, projectId, rawDataset) =>
     LEFT JOIN \`${projectId}.bronze.business_unit\`                                              bu
       ON bu.id                                                                                = i.business_unit_id
    WHERE EXTRACT(YEAR FROM \`pph-central.settings.fn_convert_utc_localtz\`(p.date, ${companyId})) BETWEEN 2025 AND 2026
+     AND p._fivetran_deleted = false
    ORDER BY p.date, p.customer_id
 `);

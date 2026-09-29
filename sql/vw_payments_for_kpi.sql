@@ -30,5 +30,6 @@ SELECT TRIM(bu.name)                                                            
   LEFT JOIN `shape-mhs-1.bronze.business_unit`                                              bu
     ON bu.id                                                                                = i.business_unit_id
  WHERE EXTRACT(YEAR FROM `pph-central.settings.fn_convert_utc_localtz`(p.date,1)) BETWEEN 2025 AND 2026
+   AND p._fivetran_deleted = false
  ORDER BY p.date, p.customer_id
 ;
