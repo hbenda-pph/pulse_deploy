@@ -17,7 +17,7 @@ module.exports = (companyId, projectId, rawDataset) =>
        , j.project_id                                                                         AS \`Project #\`
        , TRIM(p.type)                                                                         AS \`Payment Type\`
        , NULL                                                                                 AS \`Payment Method\`
-       , ROUND(p.total,2)                                                                     AS \`Amount\`
+       , ROUND(pa.applied_amount,2)                                                           AS \`Amount\`
        , TRIM(p.memo)                                                                         AS \`Memo\`
        , TRIM(p.auth_code)                                                                    AS \`Authorizaton Code\`
        , p.date                                                                               AS \`date\`
