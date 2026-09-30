@@ -21,7 +21,7 @@ module.exports = (companyId, projectId, rawDataset) =>
        , TRIM(p.memo)                                                                         AS \`Memo\`
        , TRIM(p.auth_code)                                                                    AS \`Authorizaton Code\`
        , p.date                                                                               AS \`date\`
-       , DATE(\`pph-central.settings.fn_convert_utc_localtz\`(p.date, ${companyId}))          AS \`Paid On\`
+       , DATE(pa.applied_on)                                                                  AS \`Paid On\`
        , DATE(\`pph-central.settings.fn_convert_utc_localtz\`(j.completed_on, ${companyId}))  AS \`Completion Date\`
        , TRIM(c.type)                                                                         AS \`Customer Type\`
        , TRIM(p.created_by)                                                                   AS \`Created By\`     
